@@ -1228,6 +1228,7 @@ ProjectManager::ProjectManager() {
 			hb->add_child(create_btn);
 
 			import_btn = memnew(Button);
+			import_btn->hide();
 			import_btn->set_text(TTR("Import"));
 			import_btn->set_shortcut(ED_SHORTCUT("project_manager/import_project", TTR("Import Project"), KeyModifierMask::CMD_OR_CTRL | Key::I));
 			import_btn->connect(SceneStringName(pressed), callable_mp(this, &ProjectManager::_import_project));
@@ -1418,6 +1419,7 @@ ProjectManager::ProjectManager() {
 #endif
 
 		version_btn = memnew(LinkButton);
+		version_btn->hide();
 		String hash = String(VERSION_HASH);
 		if (hash.length() != 0) {
 			hash = " " + vformat("[%s]", hash.left(9));
